@@ -7,11 +7,13 @@ const fetchData = () => {
       dataArr.map(customData => {
         if (data[customData] !== "") {
           if (customData === "imagePath") {
-            document
-              .querySelector(`[data-node-name*="${customData}"]`)
+            document.querySelector(`[data-node-name*="${customData}"]`)
               .setAttribute("src", data[customData]);
+            //  document.querySelector(`[data-node-name*="${customData}"]`).innerHTML = data[customData];
+
           } else {
-            document.querySelector(`[data-node-name*="${customData}"]`).innerText = data[customData];
+           // document.querySelector(`[data-node-name*="${customData}"]`).innerText = data[customData];
+            document.querySelector(`[data-node-name*="${customData}"]`).innerHTML = data[customData];
           }
         }
 
@@ -136,7 +138,7 @@ const animationTimeline = () => {
       scale: 1.2,
       x: 10,
       backgroundColor: "rgb(21, 161, 237)",
-      color: "#fff"
+      color: "#ffffff"
     })
     .to(".idea-3", 0.7, ideaTextTransLeave, "+=1.5")
     .from(".idea-4", 0.7, ideaTextTrans)
